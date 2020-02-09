@@ -11,7 +11,6 @@ require 'database_cleaner-active_record'
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-
 #USERS
 20.times do |k|
   User.create(email: Faker::Internet.email, phone_number: "0" + rand(100000000..999999999).to_s, description: Faker::Books::Lovecraft.paragraph)
@@ -25,7 +24,6 @@ end
 
 #LISTINGS
 50.times do |k|
-  puts k
   temp_available_beds = rand(2..10)
   temp_price = rand(40..80) * temp_available_beds
   temp_description = Faker::Books::Lovecraft.paragraph_by_chars(characters: rand(140..240))
